@@ -1,0 +1,14 @@
+CREATE TABLE IF NOT EXISTS users (
+    id BIGSERIAL PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email citext UNIQUE NOT NULL,
+    is_active BOOLEAN DEFAULT FALSE,
+    version BIGINT DEFAULT 0,
+    created_at TIMESTAMP(0) WITH TIME ZONE NOT NULL DEFAULT NOW(),
+    updated_at TIMESTAMP(0) WITH TIME ZONE DEFAULT NULL,
+    deleted_at TIMESTAMP(0) WITH TIME ZONE DEFAULT NULL
+);
+
+CREATE TRIGGER update_users_updated_at BEFORE UPDATE
+ON users FOR EACH ROW EXECUTE PROCEDURE 
+update_updated_at_column();
