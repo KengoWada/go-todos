@@ -1,4 +1,4 @@
-include env/app.env
+include .env/app.env
 MIGRATIONS_PATH = ./cmd/migrate/migrations
 
 migration:
