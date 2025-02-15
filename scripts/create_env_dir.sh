@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# https://dev.to/nietzscheson/multiples-postgres-databases-in-one-service-with-docker-compose-4fdf
-
 if [ ! -d ./env ]; then
     mkdir env
 fi
