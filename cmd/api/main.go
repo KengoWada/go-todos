@@ -22,8 +22,6 @@ func main() {
 		},
 	}
 
-	log.Println(cfg.dbConfig.addr)
-
 	db, err := database.New(
 		cfg.dbConfig.addr,
 		cfg.dbConfig.maxOpenConns,
