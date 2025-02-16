@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS users (
     id BIGSERIAL PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
     email citext UNIQUE NOT NULL,
+    password BYTEA NOT NULL,
     is_active BOOLEAN DEFAULT FALSE,
     version BIGINT DEFAULT 0,
     created_at TIMESTAMP(0) WITH TIME ZONE NOT NULL DEFAULT NOW(),
